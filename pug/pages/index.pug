@@ -1,0 +1,35 @@
+extends ../templates/template.pug
+block append config
+   -titlePage = "Inicio"
+   -paginaActual="inicio.png"
+   -titulo="ZWCAD 2020"
+   -subtitulo="Crear Cosas Increíbles"
+    
+block append content
+   .container.titulo.text-white
+      h1 #{titulo}
+      h2 #{subtitulo}
+      button.btn.btn-outline-light Descargar
+   
+block cards
+   .container.mb-3   
+      .row.align-items-stretch
+         .col-md-4.justify-content-center.d-flex.align-items-stretch.justify-content-center
+            .card.card-body
+                  h5.card-title.text-center ZWCAD
+                  p.card-text.text-center Fiable,ligero y una plataforma de CAD compatible con DWG
+                  img.card-img-top.mt-3.mb-4(src="img/producto-card-1.png", alt="")
+               
+         .col-md-4.justify-content-center.d-flex.align-items-stretch.justify-content-center
+            .card.card-body
+               h5.card-title.text-center ZWCAD Architecture
+               p.card-text.text-center Biblioteca de contenido y herramientas para dibujos architectónicos
+               img.card-img-top.mt-3.mb-4(src="img/producto-card-2.png", alt="")
+
+         .col-md-4.justify-content-center.d-flex.align-items-stretch.justify-content-center
+            .card.card-body
+               h5.card-title.text-center ZWCAD Mechanical
+               p.card-text.text-center Herramienta para dibujos mecánicos 2D
+               br
+               img.card-img-top.mt-3.mb-4(src="img/producto-card-3.png", alt="")
+

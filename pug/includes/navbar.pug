@@ -1,59 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-dark black ">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-white white ">
+    <div class="container ">
         <a class="navbar-brand" href="index.html">
-            img(src="../img/svg/logo-pec.svg",height="60",alt="Constructora PEC")
+            img(src="./img/logo.png",height="60",alt="ZCAD" class="logo")
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="d-flex flex-row-reverse ">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse open-sans text-uppercase spacing-3" id="basicExampleNav">
+        <div class="collapse navbar-collapse open-sans text-uppercase spacing-3 " id="basicExampleNav">
             <ul class="navbar-nav mr-auto">
                 if titlePage == "Inicio "
                     <li class="nav-item active">
-                        <a class="nav-link" href="./index.html">Home</a>
+                         <a href="./index.html"><button type="button" class="btn btn-light" >Inicio</button> </a>      
                     </li>
                 else
+
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home</a>
+                      <a href="./index.html"><button type="button" class="btn btn-light" >Inicio</button> </a>        
                     </li>
                     
-                if titlePage == "Nosotros"
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                    </li>
+                if titlePage == "Productos"
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+                            <a href="./zwcad.html"><button class="dropdown-item" type="button">ZWCAD 2020</button> </a> 
+                            <a href="./architecture.html"><button class="dropdown-item" type="button">ZWCAD Architecture</button> </a> 
+                            <a href="./mechanical.html"><button class="dropdown-item" type="button">ZWCAD Mechanical</button> </a> 
+                            <a href="./viewer.html"><button class="dropdown-item" type="button">ZWCAD Viewer</button> </a> 
+                        </div>
+                    </div>
+                   
                 else
-                    <li class="nav-item">
-                        <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                    </li>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Productos
 
-                if titlePage == "Obras"
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./obras.html">Obras</a>
-                    </li>
-                else
-                    <li class="nav-item">
-                        <a class="nav-link" href="./obras.html">Obras</a>
-                    </li>
-                
-                if titlePage == "Servicios"
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./servicios.html">Servicios</a>
-                    </li>
-                else
-                    <li class="nav-item">
-                        <a class="nav-link" href="./servicios.html">Servicios</a>
-                    </li>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+                            <a href="./zwcad.html"><button class="dropdown-item" type="button">ZWCAD 2020</button> </a> 
+                            <a href="./architecture.html"><button class="dropdown-item" type="button">ZWCAD Architecture</button> </a> 
+                            <a href="./mechanical.html"><button class="dropdown-item" type="button">ZWCAD Mechanical</button> </a> 
+                            <a href="./viewer.html"><button class="dropdown-item" type="button">ZWCAD Viewer</button> </a> 
+                        </div>
+                    </div>
                 
                 if titlePage == "Contacto"
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    <li class="nav-item active ">
+                        <a href="./contacto.html"><button type="button" class="btn btn-light" >Contacto</button> </a>  
                     </li>
                 else
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                    <li class="nav-item ">
+                        <a href="./contacto.html"><button type="button" class="btn btn-light" >Contacto</button> </a>  
                     </li>
             </ul>
-            
+        </div>    
         </div>
     </div>
 </nav>

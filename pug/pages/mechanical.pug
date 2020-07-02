@@ -1,0 +1,191 @@
+extends ../templates/template.pug
+block append config
+   -titlePage = "ZWCAD Mechanical 2020"
+   -paginaActual="Mechanical_2020.jpg"
+   -titulo="ZWCAD Mechanical 2020"
+   -subtitulo="Diseño Sencillo para Resultado Sofisticado"
+    
+block append content
+   .container.titulo
+      h1.text-primary #{titulo}
+      br
+      br
+      h3.text-dark #{subtitulo}
+      br
+      br
+      button.btn.btn-outline-dark Prueba gratis
+
+block description
+   .containerFullWidth.text-center.grey.lighten-2
+         h1.text-center.mt-3 Redacción Mecánica 2D Profesional
+         h3.text-center.mt-3 
+            |ZWCAD Mechanical para fabricación proporciona abundantes herramientas como generador de ejes, dimensión de
+            |tolerancia, símbolo de textura de superficie, globo y lista de materiales y piezas estándares para el dibujo mecánico en 
+            |2D.
+         img(src="./img/Mechanical-1.png", alt="").text-center
+         .containerFullWidth.mt-3.white
+            h1.text-center.mt-3 Fácil de usar y alta compatibilidad con DWG
+            img(src="./img/Mechanical-2.png", alt="")
+            h4.texter-center.mt-3 Basado en su familiar ZWCAD, alta compatibilidad con DWG
+            
+    
+
+block bicontainer
+   .containerFullWidth.grey.lighten-1.justify-content-center.align-items-space-between.text-white
+      h1.text-center.py-3 Anotación Inteligente
+      .row
+         .col-6.p-5.text-center
+            img(src="./img/Mechanical-3.png", alt="").d-block.mx-auto
+            h3 Dimensión Poderosa
+            h4 
+               |Dimensión Poderosa facilita el dimensionamiento 
+               |con cuadros de diálogo abreviados que controlan y 
+               |expanden solo las variables que son relevantes para 
+               |la fabricación, así como integran la tolerancia y la 
+               |información de la lista de ajuste.
+         .col-6.p-5.text-center
+            img(src="./img/Mechanical-4.png", alt="").d-block.mx-auto
+            h3 Múltiples Dimensiones
+            h4 
+               |Con Múltiples Dimensiones, usted puede crear
+               | múltiples dimensiones con una entrada mínima y 
+               |ordenada espacial apropiada, elementos paralelos 
+               |o simétricos.
+         .col-6.p-5.text-center
+            img(src="./img/Mechanical-5.png", alt="").d-block.mx-auto
+            h3 Detectar la superposición de dimensiones y 
+               |determinar la distancia adecuada
+            h4 
+               |Las dimensiones superpuestas se pueden espaciar
+               | automáticamente de manera apropiada. Se determina 
+               |la distancia adecuada desde el objeto que se está 
+               |dimensionando, haciendo que las dimensiones lineales
+               | se vean ordenadas y claras.
+         .col-6.p-5.text-center
+            img(src="./img/Mechanical-6.png", alt="").d-block.mx-auto
+            h3 Diseño Rápido con Símbolos Mecánicos
+            h4 
+               |Los símbolos mecánicos, que incluyen símbolos de 
+               |textura de superficie, identificadores de referencia
+               | y objetivos, conicidad, orificio central y símbolos
+               |de soldadura, ahorran mucho tiempo y mejoran la 
+               |precisión del diseño.
+   
+   .containerImg.text-white.mt-5
+      h1.text-center Globo Inteligente y BOM
+      .container.mt-3
+         .row
+            .col-6.p-5
+               img(src="./img/Mechanical-6.png", alt="").d-block.mx-auto
+               h3 Generar Globos y BOM Fácilmente
+               p 
+                  |Con ZWCAD Mechanical, usted puede dibujar,
+                  | alinear y renumerar globos basados en estándares
+                  | fácilmente. Solo se necesita un paso para crear 
+                  |una lista de materiales. Además, reconoce 
+                  |automáticamente las partes estándares 
+                  |y las resume en BOM.
+            .col-6.p-5
+               img(src="./img/Mechanical-7.png", alt="").d-block.mx-auto
+               h3 Globo Asociativo y BOM
+               p 
+                  |Cada cambio en el globo se actualizaría a la lista de 
+                  |materiales, asegurándose de que los datos sean
+                  | siempre correctos y estén actualizados.
+   
+   .containerFullWidth.grey.darken-3.justify-content-center.align-items-space-between.text-white
+        h1.text-center.p-3 Entorno de Dibujo Inteligente
+        .row
+            .col-6.p-5.text-center
+                img(src="./img/Mechanical-9.png", alt="").d-block.mx-auto
+                h3 Soporte de estándares empresariales e internacionales
+                p ZWCAD Mechanical admite entornos de dibujo ISO,
+                | ANSI, DIN, JIS y GB, y también proporciona una
+                | manera fácil de personalizar los estándares de la empresa.
+            .col-6.p-5.text-center
+                img(src="./img/Mechanical-10.png", alt="").d-block.mx-auto
+                h3 Gestión y mapeado de capas
+                p Cada entidad mecánica, como borde, dimensión, símbolo, etc.,
+                | se colocaría en la capa predeterminada con color y tipo de 
+                |línea predeterminados. Con el mapeado de capas, la entidad 
+                |mecánica se puede colocar en una capa personalizada 
+                |para que coincida con las prácticas de la empresa.
+            .col-6.p-5.text-center
+                img(src="./img/Mechanical-11.png", alt="").d-block.mx-auto
+                h3 Múltiples fronteras y escalado adaptativo
+                p ZWCAD Mechanical admite el dibujo de múltiples
+                | bordes con diferentes escalas, y el tamaño de 
+                |los objetos de las anotaciones se puede cambiar 
+                |de acuerdo con la escala del borde.
+            .col-6.p-5.text-center
+                img(src="./img/Mechanical-12.png", alt="").d-block.mx-auto
+                h3 Super Edit
+                p La reeditación es fácil, haga doble clic
+                | en los objetos y luego la configuración 
+                |en el cuadro de diálogo cambiará automáticamente.
+   
+   .containerImg.mt-5.bg-white
+      h1.text-center Partes Mecánicas y Generador
+      .container.mt-3
+         .row
+            .col-6.px-5
+               img(src="./img/Mechanical-13.png", alt="").d-block.mx-auto
+               h3 Biblioteca de Piezas
+               p 
+                  |La biblioteca de piezas ZWCAD contiene tornillos
+                  |, tuercas, arandelas, pasadores, remaches, resortes,
+                  | cojinetes, etc. Le ahorra horas de trabajo al tomar
+                  | piezas directamente de la biblioteca.
+            .col-6.px-5
+               img(src="./img/Mechanical-14.png", alt="").d-block.mx-auto
+               h3 Ejes y Engranajes
+               p 
+                  |Puede crear ejes y engranajes al ingresar
+                  | los parámetros geométricos, lo que acelera 
+                  |en gran medida todo el proceso de diseño.
+
+   .containerFullWidth.grey.lighten-1.justify-content-center.align-items-space-between
+        h1.text-center Herramientas de Dibujo Extendidas para Fabricación
+        .row
+            .col-6.p-5.text-center
+               img(src="./img/Mechanical-15.png", alt="").d-block.mx-auto
+               h3 Líneas de Construcción
+               h4 
+                  |El programa incluye un total de 32 opciones
+                  | para crear líneas de construcción y 7 opciones
+                  | para crear círculos de construcción. 
+                  |Las líneas de construcción se pueden usar 
+                  |como referencia para crear otros objetos
+                  |y facilitar el dibujo.
+            .col-6.p-5.text-center
+               img(src="./img/Mechanical-16.png", alt="").d-block.mx-auto
+               h3 Línea Central Avanzada
+               h4 
+                  |Usted puede agregar una línea central a 
+                  |un círculo o rectángulo simplemente seleccionando objetos.
+                  | Las líneas centrales se pueden dibujar como una sola 
+                  |entidad o entidades múltiples.
+            .col-6.p-5.text-center
+               img(src="./img/Mechanical-17.png", alt="").d-block.mx-auto
+               h3 Herramientas de Detalles Reutilizables
+               h4 
+                  |Genere la vista de detalle con unos pocos clics,
+                  |y se puede actualizar cuando se realiza un cambio 
+                  |en la geometría.
+            .col-6.p-5.text-center
+               img(src="./img/Mechanical-18.png", alt="")
+               h3 Dibujar Muescas de Forma Rápida y Precisa
+               h4
+                  |La muesca técnica es un segmento esencial en el
+                  | proceso de diseño mecánico, ZWCAD Mechanical ofrece
+                  | una variedad de características de construcción de la
+                  | estructura del proceso, que incluyen surcos de grietas, 
+                  |relieves de ejes y rectificadores de orificios.
+    
+    
+   .containerImg.text-center.p-3
+      h1.text-white.mt-5.mb-3.p-3 ¡Prueba ZWCAD Architecture AHORA!
+      button.btn.btn-success.mb-3 Prueba gratis
+      br
+      a.text-white.mb-5 Requisitos del sistema
+               

@@ -1,0 +1,13 @@
+extends ../templates/template.pug
+block append config
+   -titlePage = "Inicio"
+   -paginaActual="inicio.png"
+   -titulo="ZWCAD 2020"
+   -subtitulo="Crear Cosas Increíbles"
+    
+block append content
+   .container.titulo.text-white
+      h1 #{titulo}
+      h2 #{subtitulo}
+      button.btn.btn-outline-light Descargar
+   

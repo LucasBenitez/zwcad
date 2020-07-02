@@ -17,8 +17,12 @@ html(lang='es')
     header
         include ../includes/navbar.pug
     body
-        main#content-page
-            block content
+        block content
+        img(src="./img/" + paginaActual, alt="banner")
+        block cards
+        block description
+        block bicontainer
+            
         
         include ../includes/footer.pug
         //- Core JS
