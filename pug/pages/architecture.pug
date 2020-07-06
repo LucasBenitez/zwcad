@@ -1,117 +1,110 @@
 extends ../templates/template.pug
 block append config
-   -titlePage = "ZWCAD Architecture"
-   -paginaActual="Architecture_2020-1.jpg"
-   -titulo="ZWCAD Architecture"
-   -subtitulo="Estructura increíble procedía de Diseño Sencillo"
-    
+   - titlePage = "Productos";
+   - dropdownMenu = "Architecture";
+   -
+      dataPage = {
+         description: [{
+               title: "Creado para la Productividad Inmediata",
+               text: "ZWCAD Architecture es un software de CAD profesional para arquitectos que desean productividad inmediata. Incluye bibliotecas de contenido y herramientas diseñadas específicamente para dibujos de arquitectura, que mejoran el flujo de trabajo, automatizan tediosas tareas de dibujo, reducen errores y aumentan la eficiencia.",
+               img: "Architecture_2020-2.jpg"
+            },{
+               text: "Basado en su familiar ZWCAD, alta compatibilidad con DWG",
+               img: "Architecture_2020-3.jpg"
+            },
+         ],
+         biContainer:{
+            title: "",
+            products: {
+               first:{
+                  title: "Visualización",
+                  data:[{
+                        name: "Gestión de Capas Personalizada, Aterrizaje Automático de Capa",
+                        text: "El sistema inteligente de gestión de capas coloca automáticamente los elementos en la capa correcta, aplica color y tipo de línea a medida que crea su dibujo.",
+                        img: "Architecture_2020-4.jpg",
+                        },{
+                        name: "Dibujar en 2D, Creado en 3D",
+                        text: "Dibuje sus planes en 2D, cambie de vista y todos sus componentes se pueden ver en 3D. Tenga la seguridad de que su modelo 3D sigue siendo coherente con su plan 2D y viceversa.",
+                        img: "Architecture_2020-5.jpg",
+                        },{
+                        name: "Biblioteca de Bloques Incorporada",
+                        text: "Cientos de componentes como muebles, utensilios de cocina, electrodomésticos, vehículos y plantas se proporcionan para que pueda detallar sus planes  con facilidad.",
+                        img: "Architecture_2020-6.jpg",
+                        },{
+                        name: "Elevación y Sección",
+                        text: "A partir del plan 2D terminado, la elevación y la sección se pueden generar con unos pocos clics. Componga pisos, paredes, puertas, escaleras y techos del plano 2D.",
+                        img: "Architecture_2020-7.jpg",
+                        },
+                     ],
+                  },
+               second:{
+                  title: "Componentes Paramétricos de Construcción Inteligentes",
+                  data:[{
+                        name: "Crear paredes, puertas y ventanas directamente",
+                        text: "Genera paredes a partir de líneas individuales y cuadrículas. Si usted quita una puerta o ventana, la pared se enmendará automáticamente.",
+                        img: "Architecture_2020-8.jpg",
+                        },{
+                        name: "Reeditar vigas, losas, columnas",
+                        text: "Las vigas, las losas y las columnas se pueden crear con las herramientas especificadas. Estos objetos paramétricos se pueden editar haciendo doble clic y/o desde la paleta de propiedades.",
+                        img: "Architecture_2020-9.jpg",
+                        },{
+                        name: "Agregar techo, buhardillas y claraboyas con unos pocos clics",
+                        text: "ZWCAD le ayuda a lograr un efecto de reproducción fotorrealista sin tener que pagar dinero extra para comprar un plug-in de renderizado.",
+                        img: "Architecture_2020-10.jpg",
+                        },
+                     ],
+                  },
+               thrid:{
+                  title: "Anotación",
+                  data:[{
+                        name: "Un clic para generar tablas de puerta/ventana",
+                        text: "Solo hace falta un clic para generar puertas y tablas de ventanas para el dibujo, sin necesidad de un resumen manual. Esta es una herramienta súper inteligente que garantiza precisión y eficiencia.",
+                        img: "Architecture_2020-11.jpg",
+                        },{
+                        name: "Dimensión de arquitectura especificada y símbolos",
+                        text: "La dimensión incluye la adición de números de cuadrícula, trazador de líneas de puerta / ventana en lote. Esto también permite agregar símbolos como elevación, símbolo de índice, símbolo de dibujo detallado y brújula.",
+                        img: "Architecture_2020-12.jpg",
+                        },{
+                        name: "Anotar habitaciones fácilmente",
+                        text: "Se ofrecen herramientas inteligentes para reconocer que las habitaciones agreguen trampillas de manera automática y para activar o desactivar las etiquetas del nombre de la habitación y de la área de habitación.",
+                        img: "Architecture_2020-13.jpg",
+                        },{
+                        name: "Super Edit",
+                        text: "La reeditación es fácil, haga doble clic en los objetos y luego la configuración en el cuadro de diálogo cambiará automáticamente.",
+                        img: "Mechanical-12.png",
+                        },
+                     ],
+               },
+            }
+            }
+            
+      }
+
 block append content
-   .container.titulo.text-dark
-      h1 #{titulo}
-      h2 #{subtitulo}
-      button.btn.btn-outline-dark Descargar
+   +headPage("architecture","ZWCAD Architecture","Estructura increíble procedía de Diseño Sencillo")
 
 block description
-   .container.mt-3
-      h1.text-center.mt-3 Creado para la Productividad Inmediata
-      h4.text-center.mt-3
-         |ZWCAD Architecture es un software de CAD profesional para arquitectos que desean productividad inmediata. 
-         |Incluye bibliotecas de contenido y herramientas diseñadas específicamente para dibujos de arquitectura, que
-         | mejoran el flujo de trabajo, automatizan tediosas tareas de dibujo, reducen errores y aumentan la eficiencia.
-      img(src="./img/Architecture_2020-2.jpg", alt="").d-block.mx-auto
-   div.w-100.p-3.imagenPng.mt-5.mb-5
-      img(src="./img/Architecture_2020-3.jpg", alt="")
-      h3.text-center.mt-3.text-white Basado en su familiar ZWCAD, alta compatibilidad con DWG
-
-block bicontainer
-   h1.text-center Visualización
+   - const { description } = dataPage
    .container
       .row
-         .col-6.p-5
-            img(src="./img/Architecture_2020-4.jpg", alt="").d-block.mx-auto
-            h3 Gestión de Capas Personalizada, Aterrizaje Automático de Capa
-            p 
-            |El sistema inteligente de gestión de capas coloca 
-            |automáticamente los elementos en la capa correcta, 
-            |aplica color y tipo de línea a medida que crea su dibujo.
-         .col-6.p-5
-            img(src="./img/Architecture_2020-5.jpg", alt="").d-block.mx-auto
-            h3 Dibujar en 2D, Creado en 3D
-            p 
-            |Dibuje sus planes en 2D, cambie de vista y todos sus 
-            |componentes se pueden ver en 3D. Tenga la 
-            |seguridad de que su modelo 3D sigue siendo coherente con su plan 2D y viceversa.
-         .col-6.p-5
-            img(src="./img/Architecture_2020-6.jpg", alt="").d-block.mx-auto
-            h3 Biblioteca de Bloques Incorporada
-            p 
-            |Cientos de componentes como muebles, utensilios
-            |de cocina, electrodomésticos, vehículos y plantas se
-            |proporcionan para que pueda detallar sus planes 
-            |con facilidad.
-         .col-6.p-5
-            img(src="./img/Architecture_2020-7.jpg", alt="").d-block.mx-auto
-            h3 Elevación y Sección
-            p 
-            |A partir del plan 2D terminado, la elevación y la 
-            |sección se pueden generar con unos pocos clics. 
-            |Componga pisos, paredes, puertas, escaleras y 
-            |techos del plano 2D.
+         .col-12
+            .text-center.py-3
+               h2.h1= description[0].title
+               p= description[0].text
+               img(src=`./img/${description[0].img}`, alt=`${description[0].title}`).img-fluid.my-3
+      .row.grey
+         .col-12
+            .text-center.text-white.py-3
+               img(src=`./img/${description[1].img}`, alt=`${description[0].title}`).img-fluid.my-4
+               h5= description[1].text
+
+block bicontainer
+   - const { products } = dataPage.biContainer;
+   - const { first, second, thrid } = products;
+   +whiteContainer(first)
    
-   .containerfullWidth.text-white.mt-5.grey.darken-2
-      h1.text-center.p-3 Componentes Paramétricos de Construcción Inteligentes
-      .container.mt-3
-         .row
-            .col-6.p-5
-               img(src="./img/Architecture_2020-8.jpg", alt="")
-               h3 Crear paredes, puertas y ventanas directamente
-               p Genera paredes a partir de líneas individuales y
-               | cuadrículas. Si usted quita una puerta o ventana, la
-               | pared se enmendará automáticamente.
-            .col-6.p-5
-               img(src="./img/Architecture_2020-9.jpg", alt="")
-               h3 Reeditar vigas, losas, columnas
-               p Las vigas, las losas y las columnas se pueden crear
-               | con las herramientas especificadas. Estos objetos
-               | paramétricos se pueden editar haciendo doble clic 
-               |y/o desde la paleta de propiedades.
-            .col-sm.text-center.py-5
-               img(src="./img/Architecture_2020-10.jpg", alt="")
-               h3 Agregar techo, buhardillas y claraboyas con unos pocos clics
-               p ZWCAD le ayuda a lograr un efecto de reproducción fotorrealista sin tener que pagar dinero extra para comprar
-               | un plug-in de renderizado.
+   +greyContainer(second, 2)
 
-   .containerImg-1.text-dark.mt-5
-      h1.text-center.py-3 Anotación
-      .container.mt-3
-         .row
-            .col-6.py-5
-               img(src="./img/Architecture_2020-11.jpg", alt="")
-               h3 Un clic para generar tablas de puerta/ventana
-               p
-               |Solo hace falta un clic para generar puertas y tablas
-               | de ventanas para el dibujo, sin necesidad de un
-               | resumen manual. Esta es una herramienta súper 
-               |inteligente que garantiza precisión y eficiencia.
-            .col-6.py-5
-               img(src="./img/Architecture_2020-12.jpg", alt="")
-               h3 Dimensión de arquitectura especificada y símbolos
-               p 
-               |La dimensión incluye la adición de números de 
-               |cuadrícula, trazador de líneas de puerta / ventana
-               | en lote. Esto también permite agregar símbolos
-               | como elevación, símbolo de índice, símbolo de
-               | dibujo detallado y brújula.
-            .col-sm.py-5
-               img(src="./img/Architecture_2020-13.jpg", alt="").d-block.mx-auto
-               h3.mt-5 Anotar habitaciones fácilmente
-               p 
-               |Se ofrecen herramientas inteligentes para reconocer que las habitaciones agreguen trampillas de manera automática
-               | y para activar o desactivar las etiquetas del nombre de la habitación y de la área de habitación.
+   +whiteContainer(thrid)
 
-   .containerImg.text-center.py-3
-      h1.text-white.mt-5.mb-3 ¡Prueba ZWCAD Architecture AHORA!
-      button.btn.btn-success.mb-3 Prueba gratis
-      br
-      a.text-white.mb-3 Requisitos del sistema
-               
+   +solicitarTrial("Architecture")               

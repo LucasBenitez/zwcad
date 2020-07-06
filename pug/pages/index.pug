@@ -1,35 +1,19 @@
 extends ../templates/template.pug
 block append config
    -titlePage = "Inicio"
-   -paginaActual="inicio.png"
-   -titulo="ZWCAD 2020"
-   -subtitulo="Crear Cosas Increíbles"
+   - 
+      dataPage = {
+                     products: [
+                        {name: "ZWCAD", text: `Fiable,ligero y una plataforma de CAD compatible con DWG`, img: "producto-card-1.png", html: "zwcad.html"},
+                        {name: "ZWCAD Architecture", text: `Biblioteca de contenido y herramientas para dibujos architectónicos`, img: "producto-card-2.png", html: "architecture.html"},
+                        {name: "ZWCAD Mechanical", text: "Herramienta para dibujos mecánicos 2D", img: "producto-card-3.png", html: "mechanical.html"},
+                     ]
+                  }
     
 block append content
-   .container.titulo.text-white
-      h1 #{titulo}
-      h2 #{subtitulo}
-      button.btn.btn-outline-light Descargar
-   
+   +headPage("home", "ZWCAD 2020", "Crear Cosas Increíbles")
+
 block cards
-   .container.mb-3   
-      .row.align-items-stretch
-         .col-md-4.justify-content-center.d-flex.align-items-stretch.justify-content-center
-            .card.card-body
-                  h5.card-title.text-center ZWCAD
-                  p.card-text.text-center Fiable,ligero y una plataforma de CAD compatible con DWG
-                  img.card-img-top.mt-3.mb-4(src="img/producto-card-1.png", alt="")
-               
-         .col-md-4.justify-content-center.d-flex.align-items-stretch.justify-content-center
-            .card.card-body
-               h5.card-title.text-center ZWCAD Architecture
-               p.card-text.text-center Biblioteca de contenido y herramientas para dibujos architectónicos
-               img.card-img-top.mt-3.mb-4(src="img/producto-card-2.png", alt="")
-
-         .col-md-4.justify-content-center.d-flex.align-items-stretch.justify-content-center
-            .card.card-body
-               h5.card-title.text-center ZWCAD Mechanical
-               p.card-text.text-center Herramienta para dibujos mecánicos 2D
-               br
-               img.card-img-top.mt-3.mb-4(src="img/producto-card-3.png", alt="")
-
+   .container.py-3 
+      - let { products } = dataPage;
+         +cardProduct(products)

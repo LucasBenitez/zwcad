@@ -1,0 +1,12 @@
+.img-home{
+    background: {
+        image: url("../img/inicio.png");
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+    @include maskAfter();
+}

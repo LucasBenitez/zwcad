@@ -1,0 +1,12 @@
+.img-mechanical{
+    background: {
+        image: url("../img/Mechanical_2020.jpg");
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+    @include maskAfter();
+}

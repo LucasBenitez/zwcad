@@ -1,13 +1,29 @@
 extends ../templates/template.pug
 block append config
-   -titlePage = "Inicio"
-   -paginaActual="inicio.png"
-   -titulo="ZWCAD 2020"
-   -subtitulo="Crear Cosas Increíbles"
-    
+   - titlePage = "Productos"
+   - dropdownMenu = "ZWCAD"
+   -
+      dataPage = {
+               cardousel:{
+                  name: "zwcad",
+                  cards: [{
+                           title: "Su CAD familiar",
+                           name: "Interfaces",
+                           text: `ZWCAD proporciona interfaces familiares clásicas y de Ribbon. Al abrir el software, usted está como viendo a un viejo amigo.`,
+                           img: "cardrousel-0.jpg"
+                        },{
+                           title: "Cero costos de reaprendizaje",
+                           name: "Comandos",
+                           text: `Con los comandos CAD fáciles de usar, puede comenzar a usar ZWCAD inmediatamente sin ningún costo de reaprendizaje.`,
+                           img: "cardrousel-1.jpg"
+                        },{
+                           title: "Compatibilidad con DWG",
+                           name: "Compatibilidad",
+                           text: `Puede abrir y continuar sus diseños anteriores y compartirlos con colegas y clientes con facilidad.`,
+                           img: "cardrousel-2.jpg"
+                        }]
+               }
+            }
+
 block append content
-   .container.titulo.text-white
-      h1 #{titulo}
-      h2 #{subtitulo}
-      button.btn.btn-outline-light Descargar
-   
+   +listGroup(dataPage)

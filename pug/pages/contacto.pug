@@ -1,0 +1,10 @@
+extends ../templates/template.pug
+block append config
+    - titlePage = "Contacto"
+
+block append content
+    .container
+        .row
+            .col-12.col-md-7.py-3.mx-auto
+                .card.card-body
+                    +wufooForm()

@@ -1,0 +1,39 @@
+.img {
+    &-zwcad {
+        background: {
+            image: url("../img/inicio.png");
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        padding: 50px 0;
+        position: relative;
+        z-index: 1;
+        @include maskAfter();
+    }
+    &-caracteristicas{
+        background: {
+            image: url("../img/zwcad-caractetisticas.jpg");
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        padding: 50px 0;
+        position: relative;
+        z-index: 1;
+        @include maskAfter();
+    }
+    &-bg2{
+        background: {
+            image: url("../img/zwcad-bg.jpg");
+            repeat: no-repeat;
+            size: cover;
+            position: center;
+        }
+        padding: 5rem 0;
+    }
+}
+
+.submenu{
+    background-color: blue;
+}

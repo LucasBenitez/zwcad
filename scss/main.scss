@@ -1,0 +1,70 @@
+@import "burgerMenu";
+@import "navbar.scss";
+@import "_fonts.scss";
+@import "_mixins.scss";
+@import "home.scss";
+@import "mechanical.scss";
+@import "architecture.scss";
+@import "zwcad.scss";
+
+.d-grid{
+    display: grid;
+}
+
+.rounded-xl{
+    border-radius: 0.7rem;
+}
+
+.card{
+    @for $i from 1 through 3{    
+        &-back-img-#{$i}{
+            display: grid;
+            grid-template: {
+                columns: 1fr;
+                rows: 100px minmax(150px, 200px);
+            }
+            background: {
+                image: url("../img/producto-card-#{$i}.png");
+                size: cover;
+                repeat: no-repeat;
+                position: center;   
+            }
+            position: relative;
+            z-index: -1;
+            align-items: end;
+            @include maskAfter(0.7rem);
+        }
+    }
+    &-inner{
+        grid-row: 2 / 3;
+        background-color: white;
+        border-radius: 1rem 1rem 0.7rem 0.7rem;
+        padding: 0.5rem;
+    }
+}
+
+.text-shadow{
+    text-shadow: 0px 0px 5px  black;
+}
+
+.masking{
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+
+@for $i from 0 through 100 {
+    .font-#{$i}{
+        font-size: #{$i}rem;
+    }
+    .spacing-#{$i}{
+        letter-spacing: #{$i}px;
+    }
+    .z-index-#{$i}{
+        z-index: #{$i};
+    }
+}

@@ -3,59 +3,44 @@
         <a class="navbar-brand" href="index.html">
             img(src="./img/logo.png",height="60",alt="ZCAD" class="logo")
         </a>
-        <div class="d-flex flex-row-reverse ">
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon3"><span></span><span></span><span></span></div>
         </button>
-        <div class="collapse navbar-collapse open-sans text-uppercase spacing-3 " id="basicExampleNav">
-            <ul class="navbar-nav mr-auto">
-                if titlePage == "Inicio "
-                    <li class="nav-item active">
-                         <a href="./index.html"><button type="button" class="btn btn-light" >Inicio</button> </a>      
-                    </li>
-                else
-
-                    <li class="nav-item">
-                      <a href="./index.html"><button type="button" class="btn btn-light" >Inicio</button> </a>        
-                    </li>
-                    
-                if titlePage == "Productos"
-                    <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
-                            <a href="./zwcad.html"><button class="dropdown-item" type="button">ZWCAD 2020</button> </a> 
-                            <a href="./architecture.html"><button class="dropdown-item" type="button">ZWCAD Architecture</button> </a> 
-                            <a href="./mechanical.html"><button class="dropdown-item" type="button">ZWCAD Mechanical</button> </a> 
-                            <a href="./viewer.html"><button class="dropdown-item" type="button">ZWCAD Viewer</button> </a> 
+            <div class="collapse navbar-collapse open-sans text-uppercase spacing-3 " id="basicExampleNav">
+                <ul class="navbar-nav mr-auto">
+                    if titlePage == "Inicio"
+                        <li class="nav-item active py-2">
+                            <a class="text-dark" href="./index.html">Inicio</a>      
+                        </li>
+                    else
+                        <li class="nav-item py-2">
+                            <a class="text-dark" href="./index.html">Inicio</a>        
+                        </li>
+                    if titlePage == "Productos"
+                        <div class="dropdown active py-2">
+                            <a class="dropdown-toggle text-dark" id="dropdownMenuMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Productos</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+                                +dropdownItems(dropdownMenu)
+                            </div>
                         </div>
-                    </div>
-                   
-                else
-                    <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Productos
-
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
-                            <a href="./zwcad.html"><button class="dropdown-item" type="button">ZWCAD 2020</button> </a> 
-                            <a href="./architecture.html"><button class="dropdown-item" type="button">ZWCAD Architecture</button> </a> 
-                            <a href="./mechanical.html"><button class="dropdown-item" type="button">ZWCAD Mechanical</button> </a> 
-                            <a href="./viewer.html"><button class="dropdown-item" type="button">ZWCAD Viewer</button> </a> 
+                    else
+                        <div class="dropdown py-2">
+                            <a class="dropdown-toggle text-dark" id="dropdownMenuMenu" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Productos</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+                                +dropdownItems(dropdownMenu)
+                            </div>
                         </div>
-                    </div>
-                
-                if titlePage == "Contacto"
-                    <li class="nav-item active ">
-                        <a href="./contacto.html"><button type="button" class="btn btn-light" >Contacto</button> </a>  
-                    </li>
-                else
-                    <li class="nav-item ">
-                        <a href="./contacto.html"><button type="button" class="btn btn-light" >Contacto</button> </a>  
-                    </li>
-            </ul>
-        </div>    
-        </div>
+                    if titlePage == "Contacto"
+                        <li class="nav-item active py-2">
+                            <a class="text-dark" href="./contacto.html">Contacto </a>  
+                        </li>
+                    else
+                        <li class="nav-item py-2">
+                            <a class="text-dark" href="./contacto.html">Contacto</a>  
+                        </li>
+                </ul>
+            </div>    
+        
     </div>
 </nav>
 
