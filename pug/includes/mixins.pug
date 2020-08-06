@@ -10,9 +10,9 @@ mixin headPage(name, title, subTitle, btn=true)
 mixin cardProduct(products)
     .row
         each product, i in products
-            .col-md-4.position-relative.z-index-5
+            .col-12.col-md-6.position-relative.z-index-5
                     .card.card-body.rounded-xl.text-center.my-4.p-0.z-depth-2(class=`card-back-img-${i+1}`)
-                        a(href=`./${product.html}`).card-inner.z-depth-1-half.position-relative.z-index-6
+                        a(href=`./${product.html}`, style="height: 120px").card-inner.z-depth-1-half.position-relative.z-index-6.d-flex.flex-column.justify-content-center
                             h4.open-sans-600.text-dark= product.name
                             p.open-sans-300.text-dark= product.text
 
@@ -134,20 +134,20 @@ mixin dropdownItems(variable)
     case variable
         when "ZWCAD"
             <a class="dropdown-item active" href="./zwcad.html">ZWCAD 2020</a> 
-            <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
+            //- <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
             <a class="dropdown-item" href="./mechanical.html">ZWCAD Mechanical</a>
             - break
         when "Mechanical"
             <a class="dropdown-item" href="./zwcad.html">ZWCAD 2020</a> 
-            <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
+            //- <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
             <a class="dropdown-item active" href="./mechanical.html">ZWCAD Mechanical</a>
             - break
-        when "Architecture"
-            <a class="dropdown-item" href="./zwcad.html">ZWCAD 2020</a> 
-            <a class="dropdown-item active" href="./architecture.html">ZWCAD Architecture</a> 
-            <a class="dropdown-item" href="./mechanical.html">ZWCAD Mechanical</a>
-            - break
+        //- when "Architecture"
+        //-     <a class="dropdown-item" href="./zwcad.html">ZWCAD 2020</a> 
+        //-     <a class="dropdown-item active" href="./architecture.html">ZWCAD Architecture</a> 
+        //-     <a class="dropdown-item" href="./mechanical.html">ZWCAD Mechanical</a>
+        //-     - break
         default
             <a class="dropdown-item" href="./zwcad.html">ZWCAD 2020</a> 
-            <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
+            //- <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
             <a class="dropdown-item" href="./mechanical.html">ZWCAD Mechanical</a>
