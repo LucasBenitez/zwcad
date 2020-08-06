@@ -1,0 +1,28 @@
+extends ../templates/template.pug
+block append config
+   -titlePage = "Inicio"
+   - 
+      dataPage = {
+                     products: [
+                        {name: "ZWCAD", text: `Fiable,ligero y una plataforma de CAD compatible con DWG`, img: "producto-card-1.png", html: "zwcad.html"},
+                        {name: "ZWCAD Architecture", text: `Biblioteca de contenido y herramientas para dibujos architectónicos`, img: "producto-card-2.png", html: "architecture.html"},
+                        {name: "ZWCAD Mechanical", text: "Herramienta para dibujos mecánicos 2D", img: "producto-card-3.png", html: "mechanical.html"},
+                     ]
+                  }
+    
+block append content
+    section.position-relative
+        #complete.alert.alert-success.p-5.w-50.m-auto.animated.fadeIn.position-absolute.left-0.right-0.top-0.mt-5.z-index-99(role="alert")
+            h4.alert-heading.font-weight-bold ¡Excelente!
+            p Gracias por completar el formulario, en breve nos pondremos en contacto.
+            hr
+            p.mb-0
+                | Para cualquier consulta comuníquese con nosotros haciendo 
+                a.alert-link(href="#contacto-pie") click aqui
+                | .
+    +headPage("home", "ZWCAD 2020", "Crear Cosas Increíbles")
+
+block cards
+   .container.py-3 
+      - let { products } = dataPage;
+         +cardProduct(products)

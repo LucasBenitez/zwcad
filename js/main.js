@@ -13,3 +13,7 @@ $(".dropdown-toggle").click(function(e){
     console.log(target.id)
     $(`#${target.id}`).toggleClass("active");
 });
+
+$("#myList").click(function(e){
+    $(".list-group-item.active").toggleClass("active")
+})

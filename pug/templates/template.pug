@@ -4,6 +4,7 @@ html(lang='es')
         include ../config/config.pug
     include ../includes/mixins.pug
     head
+        include ../includes/googleTagHead.pug
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -17,6 +18,7 @@ html(lang='es')
     header.open-sans
         include ../includes/navbar.pug
     body.open-sans
+        include ../includes/googleTagBody.pug
         main
             block content
             block cards

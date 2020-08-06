@@ -194,21 +194,6 @@
   margin: 0;
 }
 
-#listFeatures {
-  background: #025de2;
-  background: -moz-linear-gradient(144deg, #025de2 0%, #22c1d4 51%, #025de2 100%);
-  background: -webkit-linear-gradient(144deg, #025de2 0%, #22c1d4 51%, #025de2 100%);
-  background: linear-gradient(144deg, #025de2 0%, #22c1d4 51%, #025de2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#025de2",endColorstr="#025de2",GradientType=1);
-}
-
-.nav-link.active {
-  background-color: #00aeff !important;
-  color: white !important;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) !important;
-  border: none !important;
-}
-
 .open-sans, .open-sans-600, .open-sans-300 {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -243,14 +228,6 @@
   width: 100%;
   height: 100%;
   border-radius: 0;
-}
-@media (min-width: 1200px) {
-  .img-home {
-    padding: 100px 0;
-  }
-  .img-home h1 {
-    font-size: 70px;
-  }
 }
 
 .img-mechanical {
@@ -358,14 +335,9 @@
   background-position: center;
   padding: 5rem 0;
 }
-@media (min-width: 1200px) {
-  .img-bg2 {
-    padding: 7rem 0;
-  }
-}
 
 .submenu {
-  background-color: #003674;
+  background-color: blue;
 }
 
 .d-grid {
@@ -1690,10 +1662,4 @@
   z-index: 100;
 }
 
-#complete {
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.cssclear.map */
