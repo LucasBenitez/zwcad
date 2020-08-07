@@ -1,6 +1,7 @@
 @import "burgerMenu";
 @import "navbar.scss";
 @import "_fonts.scss";
+@import "cardousel";
 @import "_mixins.scss";
 @import "home.scss";
 @import "mechanical.scss";
@@ -67,4 +68,10 @@
     .z-index-#{$i}{
         z-index: #{$i};
     }
+}
+
+#complete{
+    top: 0;
+    left: 0;
+    right: 0;
 }

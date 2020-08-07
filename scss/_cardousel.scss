@@ -1,0 +1,40 @@
+.carousel-caption{
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    left: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0px 0 10px rgba($color: #000000, $alpha: 0.7);
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+    border-end-end-radius: 0.3rem;
+    border-end-start-radius: 0.3rem;
+}
+
+#grid-carousel{
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 570px;
+    padding: 2rem 0;
+    &-lateral{
+        background-color: white;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 200px;
+        padding: 0 30px;
+    }
+    &-slides{
+        background-color: #92adcc;
+        padding: 0 2rem;
+    }
+
+}
+
+.activeSlide{
+    color: #4285f4;
+    font-weight: 700;
+}

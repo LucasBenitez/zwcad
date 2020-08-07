@@ -1,29 +1,155 @@
 extends ../templates/template.pug
 block append config
-   - titlePage = "Productos"
+   - titlePage = "Producto ZWCAD"
    - dropdownMenu = "ZWCAD"
    -
       dataPage = {
                cardousel:{
                   name: "zwcad",
                   cards: [{
+                           id: "slide-0",
                            title: "Su CAD familiar",
                            name: "Interfaces",
                            text: `ZWCAD proporciona interfaces familiares clásicas y de Ribbon. Al abrir el software, usted está como viendo a un viejo amigo.`,
                            img: "cardrousel-0.jpg"
                         },{
+                           id: "slide-1",
                            title: "Cero costos de reaprendizaje",
                            name: "Comandos",
                            text: `Con los comandos CAD fáciles de usar, puede comenzar a usar ZWCAD inmediatamente sin ningún costo de reaprendizaje.`,
                            img: "cardrousel-1.jpg"
                         },{
+                           id: "slide-2",
                            title: "Compatibilidad con DWG",
                            name: "Compatibilidad",
                            text: `Puede abrir y continuar sus diseños anteriores y compartirlos con colegas y clientes con facilidad.`,
                            img: "cardrousel-2.jpg"
                         }]
-               }
-            }
+               },
+               objFeatures: {
+                     data:{
+                        first:{
+                           id: "feature-0",
+                           title:"Comience de inmediato",
+                           icon:"",
+                           slides:[
+                              {
+                                 title:"Interfaces familiares",
+                                 text:"Cambiar fácilmente entre las interface familiar clásica y la de Ribbon.",
+                                 img:"zwcad-features-0.png"
+                              },
+                              {
+                                 title:"Comandos fáciles de usar",
+                                 text:"Comenzar de inmediato con los comandos CAD y alias fáciles de usar.",
+                                 img: false,
+                                 youtube: "hhIP2Dpep4E"
+                              },
+                              {
+                                 title:"Compatibilidad perfecta",
+                                 text:"Abrir, guardar y compartir sus dibujos DWG/DXF desde otros proveedores.",
+                                 img:"zwcad-features-1.png"
+                              }
+                           ]
+                        },
+                        second:{
+                           id: "feature-1",
+                           title: "Innovaciones",
+                           slides:[
+                              {
+                                 title:"La serie Smart",
+                                 icon:"",
+                                 items: [{
+                                             title:"Smart Mouse",
+                                             text:"Activar los comandos con gestos del ratón.",
+                                             img: false,
+                                             youtube: "0syJmyB9-ig"
+                                          },
+                                          {
+                                             title:"Smart Voice",
+                                             text:"Grabar con voz comentarios",
+                                             img:false,
+                                             youtube: "Gv49DDcoYfU"
+                                          },
+                                          {
+                                             title:"Smart Select",
+                                             text:"Seleccionar los objetos deseados rápidamente con filtro múltiple.",
+                                             img: false,
+                                             youtube: "emb_title"
+                                          },
+                                          {
+                                             title:"Smart Plot",
+                                             text:"Imprimir planos por lotes desde el espacio modelo",
+                                             img:"zwcad-features-fouritem.png"
+                                          }]
+                              },
+                              {
+                                 title:"Otras herramientas innovadoras",
+                                 icon:"",
+                                 items: [{
+                                             title:"Código de barra y Código QR",
+                                             text:"Convertir información en códigos de barra o QR e incrustarlos en el dibujo.",
+                                             img:"zwcad-features-itemone.jpg"
+                                          },
+                                          {
+                                             title:"Comparación de archivos",
+                                             text:"Encontrar las diferencias entre dos dibujos a la vez.",
+                                             img: false,
+                                             youtube: "cGyA4VgQKwA"
+                                          },
+                                          {
+                                             title:"Deshacer Instantánea",
+                                             text:"Vista previa y volver a cualquiera de los pasos anteriores.",
+                                             img:"zwcad-features-threeitem.jpg"
+                                          }],
+                              }
+                           ]
+                        },
+                        thrid:{
+                           id: "feature-2",
+                           title:"Características destacadas",
+                           icon:"",
+                           slides:[
+                              {
+                                 title:"Bloque Dinámico",
+                                 img:"zwcad-feat-img08.png"
+                              },
+                              {
+                                 title:"Paletas de herramientas",
+                                 img:"zwcad-feat-img09.jpg"
+                              },
+                              {
+                                 title:"Migracion de la configuración",
+                                 img:"zwcad-feat-img10.jpg"
+                              },
+                              {
+                                 title:"Firma digital",
+                                 img:"zwcad-feat-img11.jpg"
+                              },
+                              {
+                                 title:"Extracción de datos",
+                                 img:"zwcad-feat-img12.jpg"
+                              },
+                              {
+                                 title:"Administrador de referencia",
+                                 img:"zwcad-feat-img13.jpg"
+                              },
+                              {
+                                 title:"Centro de diseño",
+                                 img:"zwcad-feat-img14.jpg"
+                              },
+                              {
+                                 title:"Super Hatch",
+                                 img:"zwcad-feat-img15.jpg"
+                              },
+                              {
+                                 title:"Exportación del diseño",
+                                 img:"zwcad-feat-img16.jpg"
+                              }
+                           ]
+                        }
+                     }
+                  }
+      };
 
 block append content
    +listGroup(dataPage)

@@ -1,11 +1,14 @@
 mixin headPage(name, title, subTitle, btn=true)
     div(class=`img-${name}`)
         .container.text-white.position-relative.z-index-5
-            .text-center.text-white.py-4
-                h1.open-sans-600 #{title}
-                h3.open-sans-300 #{subTitle}
-                if btn === true
-                    a(href="./contacto.html").btn.btn-outline-light.rounded-lg solicitar trial
+            .row
+                .col-sm-12.col-md-6
+                    .text-center.text-white.py-4
+                        h1.open-sans-600 #{title}
+                        h3.open-sans-300 #{subTitle}
+                        if btn === true
+                            a(href="./contacto.html").btn.btn-outline-light.rounded-lg solicitar trial
+                            a(href="./contacto.html").btn.btn-success.rounded-lg Comprar ahora
 
 mixin cardProduct(products)
     .row
@@ -19,11 +22,13 @@ mixin cardProduct(products)
 mixin products(products)
     .row
         each p in products
-            .col-sm-12.col-md-6
-                .card.card-body.text-center.my-5.rounded-xl.z-depth-3.text-dark
-                    img(src=`./img/${p.img}`, alt=`${p.title}`).img-fluid.py-4
-                    h5.open-sans-600= p.name
-                    p.open-sans-300= p.text
+            .col-sm-12.col-md-6.d-flex.align-items-stretch
+                .card.card-body.text-center.my-5.rounded-xl.z-depth-3.text-dark.d-grid
+                    .img-item
+                        img(src=`./img/${p.img}`, alt=`${p.title}`).img-fluid.py-4
+                    .text-item   
+                        h5.open-sans-600= p.name
+                        p.open-sans-300= p.text
 
 mixin whiteContainer(product)
     .white
@@ -44,47 +49,61 @@ mixin greyContainer(product, level)
             +products(product.data)
 
 mixin cardousel(obj)
-    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-2" data-slide-to="1"></li>
-            <li data-target="#carousel-example-2" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            +cardouselSlide(obj.cards)
-        </div>
-            <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-    </div>
+    - let data = obj
+        .d-grid#grid-carousel
+            #grid-carousel-lateral
+                .d-flex.align-items-center.justify-content-center.px-3
+                    h1.text-center.mt-5.open-sans-600.blue-text.flex-fill#title-cardousel    
+                ol.list-unstyled.mx-2.mt-auto
+                    each c in data.cards 
+                        li.my-2.font-2(data-target="#grid-carousel-slides", data-slide-to=`${c.id}`, data-title=`${c.title}`) #{c.name}
+                a(href='./contacto.html').btn.btn-primary.rounded-pill.mt-2.mb-3.w-75.mr-auto SOLICITAR TRIAL
+            #grid-carousel-slides.py-5
+                +cardouselSlide(obj.cards)
+
+mixin cardouselTraditional(obj)
+    #carouserl-traditional.carousel.slide.carousel-fade.py-5(data-ride="carousel")
+        ol.carousel-indicators
+            li.active(data-target="#carouserl-traditional", data-slide-to="0")
+            li(data-target="#carouserl-traditional", data-slide-to="1")
+            li(data-target="#carouserl-traditional", data-slide-to="2")
+        .carousel-inner.z-depth-2(role="listbox")
+            +cardouselSlideTraditional(obj.cards)
+        a.carousel-control-prev(href="#carouserl-traditional", role="button", data-slide="prev")
+            span.carousel-control-prev-icon(aria-hidden="true")
+            span.sr-only Previous
+        a.carousel-control-next(href="#carouserl-traditional", role="button", data-slide="next")
+            span.carousel-control-next-icon(aria-hidden="true")
+            span.sr-only Next
 
 
-mixin cardouselSlide(data)
+mixin cardouselSlideTraditional(data)
         each d, i in data
             if i === 0
                 .carousel-item.active
-                    .view
+                    .view.z-depth-2.rounded-lg
                         img.d-block.w-100(src=`./img/${d.img}` alt=`${d.name}`)
-                        .masking
-                    .carousel-caption.z-index-5.py-4
+                    .carousel-caption.z-index-5.p-3.light-blue.darken-4
                         h2.open-sans-600.text-shadow= d.name
                         p.open-sans-300.text-shadow= d.text
             else
                 .carousel-item
-                    .view
+                    .view.z-depth-2.rounded-lg
                         img.d-block.w-100(src=`./img/${d.img}` alt=`${d.name}`)
-                        .masking
-                    .carousel-caption.z-index-5.py-4
+                    .carousel-caption.z-index-5.p-3.light-blue.darken-4
                         h2.open-sans-600.text-shadow= d.name
                         p.open-sans-300.text-shadow= d.text
 
+mixin cardouselSlide(data)
+        each d, i in data
+            .grid-carousel-item.animated.d-none(id=`${d.id}`, data-title=`${d.title}`)
+                img.d-block.w-100(src=`./img/${d.img}` alt=`${d.title}`)
+                .text-center.mt-4
+                    h2.open-sans-600 #{d.name}
+                    p.open-sans-300 #{d.text}
+
 mixin wufooForm()
-    <iframe title="Embedded Wufoo Form"height="703"allowTransparency="true"frameborder="0"scrolling="no"style="width:100%;border:none"src="https://paragonla.wufoo.com/embed/m1mn31lz0ath15s/"><a href="https://paragonla.wufoo.com/forms/m1mn31lz0ath15s/">Fill out my Wufoo form!</a></iframe>
+    iframe(title="Embedded Wufoo Form", height="703", allowtransparency="true", frameborder="0", scrolling="no", style="width:100%;border:none", src="https://paragonla.wufoo.com/embed/m1mn31lz0ath15s/") <a href="https://paragonla.wufoo.com/forms/m1mn31lz0ath15s/"></a>
 
 mixin solicitarTrial(name)
     .grey.darken-3
@@ -95,20 +114,22 @@ mixin solicitarTrial(name)
 
 mixin listGroup(dataPage)
     .list-group.blue.justify-content-center(id=`myList`, role="tablist")
-        .d-flex.justify-content-between.align-items-center.px-4.py-3
-            .icon-logo.text-white.d-flex.align-items-center
-                img(src="./img/icon-submenu.png",height="40",alt="ZWCAD").mr-3
-                p.mb-0.open-sans-600 ZWCAD
-        
-            button.navbar-toggler.second-button(type="button" data-toggle="collapse" data-target="#subMenu" aria-controls="subMenu" aria-expanded="false" aria-label="Toggle navigation")
-                <div class="animated-icon2"><span></span><span></span><span></span></div>
+        .container
+            .d-flex.justify-content-between.align-items-center.px-4.py-3
+                .icon-logo.text-white.d-flex.align-items-center
+                    img(src="./img/icon-submenu.png",height="40",alt="ZWCAD").mr-3
+                    p.mb-0.open-sans-600 ZWCAD
+            
+                button.navbar-toggler.second-button(type="button" data-toggle="collapse" data-target="#subMenu" aria-controls="subMenu" aria-expanded="false" aria-label="Toggle navigation")
+                    <div class="animated-icon2"><span></span><span></span><span></span></div>
             
         .collapse.navbar-collapse.open-sans.text-uppercase.spacing-3#subMenu
-            ul.navbar-nav.mr-auto
-                li.nav-item 
-                    a.list-group-item.list-group-item-action.active(data-toggle="list", href=`#paronama`, role="tab") Paronama
-                li.nav-item 
-                    a.list-group-item.list-group-item-action(data-toggle="list", href=`#caracteristicas`, role="tab") Caracteristicas
+            .container
+                    ul.navbar-nav.d-inline-flex.flex-row
+                        li.nav-item.rounded-lg.m-2
+                            a.list-group-item.list-group-item-action.active(data-toggle="list", href=`#paronama`, role="tab") Panorama
+                        li.nav-item.rounded-lg.m-2 
+                            a.list-group-item.list-group-item-action(data-toggle="list", href=`#caracteristicas`, role="tab") Caracteristicas
     .tab-content
             .tab-pane.active(id="paronama", role="tabpanel")
                 +headPage("zwcad","ZWCAD 2020","Crear Cosas Increíbles")
@@ -116,19 +137,26 @@ mixin listGroup(dataPage)
                     .container
                         .row
                             .col-12
-                            .text-center.text-white
-                                p.h3.open-sans-600 ZWCAD
-                                p Una solución CAD potente, confiable y compatible con DWG
-                                p ZWCAD al ser rentable puede garantizar la calidad y productividad del diseño de por vida.
-                section
+                                .text-center.text-white
+                                    p.h3.open-sans-600 ZWCAD
+                                    p Una solución CAD potente, confiable y compatible con DWG
+                                    p ZWCAD al ser rentable puede garantizar la calidad y productividad del diseño de por vida.
+                section.bg-dark
                     - const { cardousel } = dataPage;
-                    +cardousel(cardousel)
+                    .container
+                        .row
+                            .d-none.d-md-block.col-12.mx-auto
+                                +cardousel(cardousel)
+                            .d-md-none.col-12.mx-auto
+                                +cardouselTraditional(cardousel)
                 section
                     +solicitarTrial("2020")
             
             .tab-pane(id="caracteristicas", role="tabpanel")
                 +headPage("caracteristicas","Características","Herramientas potentes y eficientes para que pueda crear cosas increíbles.", false)
-                section.features-box.blue
+                section.features-box
+                    - const { objFeatures } = dataPage;
+                        +listFeatures(objFeatures)
 
 mixin dropdownItems(variable)
     case variable
@@ -151,3 +179,50 @@ mixin dropdownItems(variable)
             <a class="dropdown-item" href="./zwcad.html">ZWCAD 2020</a> 
             //- <a class="dropdown-item" href="./architecture.html">ZWCAD Architecture</a> 
             <a class="dropdown-item" href="./mechanical.html">ZWCAD Mechanical</a>
+
+mixin listFeatures(objFeature)
+    - const { data } = objFeature;
+    - const { title: ti1, icon: ic1, items: it1 } = data.second.slides[0];
+    - const { title: ti2, icon: ic2, items: it2 } = data.second.slides[1];
+    ul.nav.nav-tabs#listFeatures.d-flex.flex-column.align-items-center.justify-content-around.py-2(role="tablist")
+        li.nav-item.bg-white.z-depth-1.rounded-lg.w-75.my-2.text-center.spacing-2  
+            a.nav-link.text-uppercase.open-sans(id=`${data.first.id}-tab`,data-toggle="tab", href=`#${data.first.id}`, role="tab", aria-controls=`#${data.first.id}`, aria-selected="true") #{data.first.title}
+        li.nav-item.bg-white.z-depth-1.rounded-lg.w-75.my-2.text-center.spacing-2
+            a.nav-link.text-uppercase.open-sans(id=`${data.second.id}-tab`,data-toggle="tab", href=`#${data.second.id}`, role="tab", aria-controls=`#${data.second.id}`, aria-selected="true") #{data.second.title}
+        li.nav-item.bg-white.z-depth-1.rounded-lg.w-75.my-2.text-center.spacing-2
+             a.nav-link.text-uppercase.open-sans(id=`${data.thrid.id}-tab`,data-toggle="tab", href=`#${data.thrid.id}`, role="tab", aria-controls=`#${data.thrid.id}`, aria-selected="true") #{data.thrid.title}
+    .tab-content#myTabContent
+        .tab-pane.fade.show(id=`${data.first.id}`,role="tabpanel", aria-labelledby=`${data.first.id}-tab`) 
+            +printSlides(data.first.slides)
+        .tab-pane.fade.show(id=`${data.second.id}`,role="tabpanel", aria-labelledby=`${data.second.id}-tab`) 
+            +printSlidesObjects(ti1, ic1, it1)
+            +printSlidesObjects(ti2, ic2, it2)
+        .tab-pane.fade.show(id=`${data.thrid.id}`,role="tabpanel", aria-labelledby=`${data.thrid.id}-tab`)
+            +printSlides(data.thrid.slides)
+
+mixin printSlides(slides)
+    .container
+        .row
+            each slide in slides
+                .col-10.col-md-4.offset-2.offset-mb-0.mx-auto.py-3.d-flex.align-items-stretch
+                    .card.card-body.my-2.text-center.rounded-lg
+                        h4.open-sans-600 #{slide.title}
+                        p.open-sans-300 #{slide.text}
+                        if slide.img !== false
+                            img(src=`./img/${slide.img}`, alt=`${slide.title}`).img-fluid.d-block.my-auto
+                        else
+                            iframe(width="100%", height="315", src=`https://www.youtube-nocookie.com/embed/${slide.youtube}`, frameborder="0", allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)
+
+mixin printSlidesObjects(title, icon, items)
+    .col-10.col-md-6.mx-auto.py-3
+        .card.my-4.text-center.rounded-xl
+            h3.open-sans-600.my-2 #{title}
+            each item in items
+                .card-body
+                    .text-center
+                        h4.open-sans-600 #{item.title}
+                        p.open-sans-300 #{item.text}
+                        if item.img !== false
+                            img(src=`./img/${item.img}`, alt=`${item.title}`).img-fluid
+                        else
+                            iframe(width="100%", height="315", src=`https://www.youtube-nocookie.com/embed/${item.youtube}`, frameborder="0", allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)    

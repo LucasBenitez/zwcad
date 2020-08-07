@@ -10,3 +10,16 @@
     z-index: 1;
     @include maskAfter();
 }
+
+.d-grid{
+    & > .text-item{
+        align-self: center;
+    }
+    & > .img-item{
+        align-self: center;
+            img{
+                height: 250px;
+                width: auto;
+            }
+        }
+}

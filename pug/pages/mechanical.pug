@@ -1,6 +1,6 @@
 extends ../templates/template.pug
 block append config
-   - titlePage = "Productos"
+   - titlePage = "Producto - Mechanical"
    - dropdownMenu = "Mechanical";
    - 
       dataPage = {
@@ -119,7 +119,7 @@ block append description
                h4.open-sans-300 #{description.text}
             .col-12
                img(src=`./img/${description.img}`, alt=`${description.title}`).img-fluid
-         .row.white
+         .row
             .col-12
                .text-center.py-3
                   h4.h4 Fácil de usar y alta compatibilidad con DWG

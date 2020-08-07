@@ -9,4 +9,23 @@
     position: relative;
     z-index: 1;
     @include maskAfter();
+    // Extra small devices (portrait phones, less than 576px)
+    // No media query since this is the default in Bootstrap
+
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {  }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {  }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {  }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) { 
+        padding: 100px 0;
+        h1{
+            font-size: 70px;    
+        }    
+    }
 }
